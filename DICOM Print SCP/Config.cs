@@ -20,7 +20,11 @@ namespace Dicom.PrintScp {
 
 			PrintDocument document = new PrintDocument();
 			PrinterSettings = document.PrinterSettings;
-			PaperSource = PrinterSettings.PaperSources[0].SourceName;
+			if (PrinterSettings.PaperSources.Count != 0)
+                       {
+                            PaperSource = PrinterSettings.PaperSources[0].SourceName;
+                        }
+
 		}
 
 		public string PrinterName {
